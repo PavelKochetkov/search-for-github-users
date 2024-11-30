@@ -8,8 +8,8 @@ const NavigationMenu = (): ReactElement => {
   const { t } = useTranslation();
 
   return (
-    <nav className= "bg-blue-600 font-mono text-2xl shadow-lg shadow-cyan-500/50">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+    <nav className= "bg-blue-500 font-mono text-2xl shadow-lg shadow-blue-500/50">
+      <div className="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto p-4">
         <NavLink
           className="text-white"
           to={getRoutePage('HOME_PAGE')}>

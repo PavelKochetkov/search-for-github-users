@@ -2,7 +2,7 @@ import { ReactElement } from "react";
 
 const NotFoundPage = (): ReactElement => {
   return (
-    <div>Такой страницы не существует</div>
+    <div className="flex justify-center items-center h-screen">Такой страницы не существует</div>
   );
 };
 

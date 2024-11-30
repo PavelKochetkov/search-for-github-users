@@ -6,5 +6,8 @@ export default {
       title: 'Github Search',
       alt: 'Логотип меню',
     },
+    footer: {
+      developer: 'Разработал Павел Кочетков',
+    },
   },
 };
