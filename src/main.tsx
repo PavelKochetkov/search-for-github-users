@@ -1,10 +1,16 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import './index.css';
-import App from './App.tsx';
+import init from './init';
 
-createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
-);
+const run = async (): Promise<void> => {
+  const root = createRoot(document.getElementById('root')!);
+  const app = await init();
+  root.render(
+    <StrictMode>
+      {app}
+    </StrictMode>,
+  );
+};
+
+run();

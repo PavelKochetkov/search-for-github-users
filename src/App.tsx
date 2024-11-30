@@ -1,11 +1,11 @@
-function App() {
+const App = () => {
 
   return (
-    <div className="flex flex-col text-3xl font-bold underline justify-center items-center h-screen w-full bg-amber-100">
-      <div>Search for github users!</div>
-      <div>Coming soon...</div>
+    <div className="flex flex-col h-screen w-full bg-slate-200">
+      <div className="text-3xl font-bold underline">Search for github users!</div>
+      <div className="text-3xl font-bold underline">Coming soon...</div>
     </div>
   );
-}
+};
 
 export default App;
