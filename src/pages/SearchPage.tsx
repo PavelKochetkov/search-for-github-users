@@ -2,7 +2,7 @@ import { ReactElement } from "react";
 
 const SearchPage = (): ReactElement => {
   return (
-    <div className="flex justify-center items-center h-screen">Страница поиска</div>
+    <main className="flex justify-center items-center h-screen text-white">Страница поиска</main>
   );
 };
 

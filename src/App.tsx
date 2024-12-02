@@ -4,15 +4,15 @@ import getRoutePage from "./helpers/routes";
 import HomePage from "./pages/HomePage";
 import SearchPage from "./pages/SearchPage";
 import NotFoundPage from "./pages/NotFoundPage";
-import NavigationMenu from "./components/NavigationMenu";
 import Footer from "./components/Footer";
+import Header from "./components/Header";
 
 const App = (): ReactElement => {
 
   return (
-    <div className="h-screen bg-slate-200 flex flex-col">
+    <div className="h-screen bg-slate-700 flex flex-col">
       <BrowserRouter>
-        <NavigationMenu />
+        <Header />
         <Routes>
           <Route path={getRoutePage('HOME_PAGE')} element={<HomePage />} />
           <Route path={getRoutePage('SEARCH_PAGE')} element={<SearchPage />} />
