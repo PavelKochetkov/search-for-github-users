@@ -10,7 +10,7 @@ import Header from "./components/Header";
 const App = (): ReactElement => {
 
   return (
-    <div className="h-screen bg-slate-700 flex flex-col">
+    <div className="bg-slate-700 flex flex-col h-screen">
       <BrowserRouter>
         <Header />
         <Routes>

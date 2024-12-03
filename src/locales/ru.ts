@@ -21,5 +21,12 @@ export default {
       filtrationDescrition:'Отфильтруйте пользователей по количеству репозиториев.',
       startSearching: 'Начать поиск',
     },
+    searchForm: {
+      searchButton: 'Поиск',
+      placeholder: 'Введите имя или никнейм'
+    },
+    errors: {
+      required: 'Обязательное поле',
+    },
   },
 };

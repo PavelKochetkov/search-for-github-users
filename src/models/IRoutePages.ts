@@ -5,4 +5,3 @@ interface IRoutePages {
 };
 
 export default IRoutePages;
-
