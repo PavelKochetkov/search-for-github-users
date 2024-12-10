@@ -19,14 +19,14 @@ const NavigationMenu = (): ReactElement => {
         <ul className="font-medium flex p-0 mt-0 space-x-8">
           <li>
             <NavLink
-              className="block text-white hover:text-slate-500 transition duration-300"
+              className="block text-white hover:text-slate-500 transition duration-300 [&.active]:text-slate-500"
               to={getRoutePage('HOME_PAGE')}>
               {t('navigation.home')}
             </NavLink>
           </li>
           <li>
             <NavLink 
-              className="block text-white hover:text-slate-500 transition duration-300"
+              className="block text-white hover:text-slate-500 transition duration-300  [&.active]:text-slate-500"
               to={getRoutePage("SEARCH_PAGE")}>
               {t('navigation.search')}
             </NavLink>
