@@ -1,8 +1,10 @@
 import { ReactElement, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { useUsersDataStore } from "../store/usersStore";
 import { Link, useParams } from "react-router-dom";
 
 const ProfileCard = () : ReactElement => {
+  const { t } = useTranslation();
   const params = useParams<{ login: string }>();
   const {
     getUserByLogin,
@@ -24,18 +26,22 @@ const ProfileCard = () : ReactElement => {
 
   return (
     <>
-      <div className="p-4">
-        <img src={avatar_url} alt={name} className="w-32 h-32 rounded-full border border-gray-300" />
-        <div className="ml-4">
-          <h2 className="text-xl font-semibold text-gray-800">{name}</h2>
+      <div className="flex items-center p-4">
+        <img 
+          className="w-32 h-32 rounded-full border border-gray-300"
+          src={avatar_url}
+          alt={name}
+        />
+        <div className="ml-4 text-xl">
+          <h2 className="font-semibold text-gray-800">{name}</h2>
           <p className="text-gray-600">{company}</p>
           <p className="text-gray-600">{location}</p>
         </div>
       </div>
-      <div className="p-4 border-t">
-        <p className="text-gray-600">Public Repos: {public_repos}</p>
-        <p className="text-gray-600">Followers: {followers}</p>
-        <p className="text-gray-600">Following: {following}</p>
+      <div className="p-4 border-t text-xl">
+        <p className="text-gray-600">{t('profilePage.numberOfRepo')}: {public_repos}</p>
+        <p className="text-gray-600">{t('profilePage.numberOfSubscribers')}: {followers}</p>
+        <p className="text-gray-600">{t('profilePage.numberOfSubscriptions')}: {following}</p>
       </div>
       <div className="p-4">
         <Link
@@ -44,7 +50,7 @@ const ProfileCard = () : ReactElement => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Посмотреть профиль
+          {t('profilePage.viewProfile')}
         </Link>
       </div>
     </>

@@ -21,6 +21,20 @@ export default {
       filtrationDescrition:'Отфильтруйте пользователей по количеству репозиториев.',
       startSearching: 'Начать поиск',
     },
+    profilePage: {
+      numberOfRepo: 'Количество репозиториев',
+      numberOfSubscribers: 'Число подписчиков',
+      numberOfSubscriptions: 'Число подписок',
+      viewProfile: 'Посмотреть профиль',
+
+    },
+    notFoundPage: {
+      notFoundPage: 'Такой страницы не существует',
+      backToHome: 'Вернуться на главную',
+    },
+    usersCards: {
+      moreDetails: 'Подробнее',
+    },
     searchForm: {
       searchButton: 'Поиск',
       placeholder: 'Введите имя или никнейм'
