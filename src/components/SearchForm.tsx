@@ -12,8 +12,8 @@ const SearchForm = (): React.ReactElement => {
   const validationSchema = createSchemaValidationSearch(t);
   const navigate = useNavigate();
 
-  const handleSubmit = (values: { nickname: string }) => {
-    getUsersData(values);
+  const handleSubmit = async (values: { nickname: string }) => {
+    await getUsersData(values);
     navigate(getRoutePage('USERS_PAGE'));
   };
 

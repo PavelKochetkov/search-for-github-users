@@ -7,6 +7,7 @@ import { UserActionByLogin } from '../types/UserActionsByLogin';
 
 const BASE_URL = 'https://api.github.com';
 const usersSliceResponse: StateCreator<UsersSearchResponse & UsersActionData> = (set) => ({
+  isData: false,
   total_count: 0,
   items: [],
   isLoading: false,
@@ -18,6 +19,7 @@ const usersSliceResponse: StateCreator<UsersSearchResponse & UsersActionData> = 
     });
     
     set({
+      isData: true,
       total_count: response.data.total_count,
       items: response.data.items,
       isLoading: true,
