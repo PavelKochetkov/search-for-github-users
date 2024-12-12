@@ -28,6 +28,9 @@ export default {
       viewProfile: 'Посмотреть профиль',
 
     },
+    usersPage: {
+      resetSearchResult: 'Сбросить',
+    },
     notFoundPage: {
       notFoundPage: 'Такой страницы не существует',
       backToHome: 'Вернуться на главную',

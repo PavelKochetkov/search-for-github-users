@@ -27,6 +27,14 @@ const usersSliceResponse: StateCreator<UsersSearchResponse & UsersActionData> = 
 
     return response.data;
   },
+  resetSearchResult: () => {
+    set({
+      isData: false,
+      total_count: 0,
+      items: [],
+      isLoading: false,
+    });
+  },
 });
 
 const userSliceData: StateCreator<UsersData & UserActionByLogin> = (set) => ({
