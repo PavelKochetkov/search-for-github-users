@@ -41,6 +41,7 @@ make start
 - React
 - Tailwind CSS
 - GitHub API
+- Vite
 
 ## Future
 

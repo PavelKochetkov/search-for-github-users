@@ -42,6 +42,14 @@ export default {
       searchButton: 'Поиск',
       placeholder: 'Введите имя или никнейм'
     },
+    pagination: {
+      showing: 'Показаны с',
+      to: 'по',
+      of: 'из',
+      entries: 'записей',
+      prev: 'Предыдущий',
+      next: 'Следующий',
+    },
     errors: {
       required: 'Обязательное поле',
     },

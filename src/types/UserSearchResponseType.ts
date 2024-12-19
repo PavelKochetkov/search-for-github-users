@@ -5,4 +5,10 @@ export type UsersSearchResponse = {
     items: UsersData[],
     isLoading: boolean,
     isData: boolean,
+    per_page: number,
+    page: number,
+    nickname: { nickname: string },
+    totalPages: number,
+    currentPage: number,
+    currentPerPage: number,
 };

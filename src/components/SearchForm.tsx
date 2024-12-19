@@ -7,13 +7,13 @@ import { useNavigate } from "react-router-dom";
 import getRoutePage from "../helpers/routes";
 
 const SearchForm = (): React.ReactElement => {
-  const { getUsersData } = useUsersStore();
+  const { getUsersData, per_page, page } = useUsersStore();
   const { t } = useTranslation();
   const validationSchema = createSchemaValidationSearch(t);
   const navigate = useNavigate();
 
   const handleSubmit = async (values: { nickname: string }) => {
-    await getUsersData(values);
+    await getUsersData(values, page, per_page);
     navigate(getRoutePage('USERS_PAGE'));
   };
 
