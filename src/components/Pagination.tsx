@@ -32,7 +32,6 @@ const Pagination = (): ReactElement => {
 
   return (
     <div className="flex flex-col items-center justify-center">
-      { total_count === 0 && <div className="text-white">Пользователь не найден</div> }
       {
         total_count !== 0 && 
         <>

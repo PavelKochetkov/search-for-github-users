@@ -42,6 +42,11 @@ export default {
       searchButton: 'Поиск',
       placeholder: 'Введите имя или никнейм'
     },
+    userNotFound: {
+      title: 'Пользователь не найден',
+      description: 'К сожалению, пользователь с указанными данными не найден.',
+      returnToSearch: 'Вернуться к поиску',
+    },
     pagination: {
       showing: 'Показаны с',
       to: 'по',

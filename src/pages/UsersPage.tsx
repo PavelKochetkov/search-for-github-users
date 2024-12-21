@@ -8,9 +8,9 @@ const UsersPage = (): ReactElement => {
     <>
       <div className="flex flex-col items-start">
         <ResetSearchResult />
-        <div className="flex gap-5 m-8 justify-center flex-wrap">
-          <UsersCards />
-        </div>
+      </div>
+      <div className="flex gap-5 m-8 justify-center flex-wrap">
+        <UsersCards />
       </div>
       <Pagination />
     </>

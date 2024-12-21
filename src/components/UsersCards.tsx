@@ -2,12 +2,14 @@ import { NavLink } from "react-router-dom";
 import { useUsersStore } from "../store/usersStore";
 import getRoutePage from "../helpers/routes";
 import { useTranslation } from "react-i18next";
+import UserNotFound from "./UserNotFound";
 
 const UsersCards = () => {
   const { t } = useTranslation();
   const { items } = useUsersStore();
   return (
     <>
+      {items.length === 0 && <UserNotFound />}
       {items.length > 0 && items.map((item) => (
         <div 
           className="flex flex-col justify-center flex-wrap bg-slate-400/30 shadow-lg rounded-xl transform transition duration-200 hover:bg-slate-800 hover:-translate-y-4 hover:shadow-blue-200"
