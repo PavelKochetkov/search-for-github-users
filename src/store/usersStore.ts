@@ -21,7 +21,7 @@ const usersSliceResponse: StateCreator<UsersSearchResponse & UsersActionData> = 
   getUsersData: async (values: { nickname: string }, page: number, per_page: number): Promise<UsersSearchResponse> => {
     const query = values.nickname;
     const response = await axios.get<UsersSearchResponse>(`${BASE_URL}/search/users`, {
-      params: { q: query, page, per_page }
+      params: { q: query, page, per_page, sort: 'repositories' }
     });
     const { total_count } = get();
     
