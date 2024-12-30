@@ -97,7 +97,7 @@ const userSliceData: StateCreator<UsersData & UserActionByLogin> = (set) => ({
   html_url:undefined,
   
   getUserByLogin: async (loginName: string | undefined): Promise<UsersData> => {
-    const response = await axios.get<UsersData>(`${BASE_URL}/users/${loginName}`);
+    const { data } = await axios.get<UsersData>(`${BASE_URL}/users/${loginName}`);
     const {
       login,
       avatar_url,
@@ -110,7 +110,7 @@ const userSliceData: StateCreator<UsersData & UserActionByLogin> = (set) => ({
       location,
       following,
       html_url,
-    } = response.data;
+    } = data;
     
     set({
       login,
@@ -126,7 +126,7 @@ const userSliceData: StateCreator<UsersData & UserActionByLogin> = (set) => ({
       html_url,
     });
 
-    return response.data;
+    return data;
   },
 });
 
