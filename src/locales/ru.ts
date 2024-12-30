@@ -18,7 +18,7 @@ export default {
       viewInformationTitle: 'Просмотр информации:',
       viewInformationDescrition: 'Узнайте больше о каждом пользователе и их проектах.',
       filtrationTitle: 'Фильтрация:',
-      filtrationDescrition:'Отфильтруйте пользователей по количеству репозиториев.',
+      filtrationDescrition:'Пользователи отфильтрованы по количеству репозиториев.',
       startSearching: 'Начать поиск',
     },
     profilePage: {
@@ -26,7 +26,7 @@ export default {
       numberOfSubscribers: 'Число подписчиков',
       numberOfSubscriptions: 'Число подписок',
       viewProfile: 'Посмотреть профиль',
-
+      backToSearch: 'Назад',
     },
     usersPage: {
       resetSearchResult: 'Сбросить',
@@ -57,6 +57,9 @@ export default {
     },
     errors: {
       required: 'Обязательное поле',
+      networkError: 'Отстутствует подключение к сети.',
+      errorBadRequest: 'Частые запросы к серверу. Обновите страницу и повторите через 1 минуту.',
+      unknownError: 'Неизвестная ошибка. Обновите страницу.',
     },
   },
 };

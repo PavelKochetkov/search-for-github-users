@@ -11,4 +11,5 @@ export type UsersSearchResponse = {
     totalPages: number,
     currentPage: number,
     currentPerPage: number,
+    error: string | null,
 };

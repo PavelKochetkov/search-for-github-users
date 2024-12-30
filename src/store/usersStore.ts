@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios, { AxiosError } from 'axios';
 import { UsersSearchResponse } from '../types/UserSearchResponseType';
 import { UsersActionData } from '../types/UsersActionsResponse';
 import { create, StateCreator } from 'zustand';
@@ -17,24 +17,33 @@ const usersSliceResponse: StateCreator<UsersSearchResponse & UsersActionData> = 
   totalPages: 0,
   currentPage: 1,
   currentPerPage: 10,
+  error: null,
   
-  getUsersData: async (values: { nickname: string }, page: number, per_page: number): Promise<UsersSearchResponse> => {
+  getUsersData: async (values: { nickname: string }, page: number, per_page: number): Promise<UsersSearchResponse | undefined> => {
     const query = values.nickname;
-    const response = await axios.get<UsersSearchResponse>(`${BASE_URL}/search/users`, {
-      params: { q: query, page, per_page, sort: 'repositories' }
-    });
-    const { total_count } = get();
-    
-    set({
-      isData: true,
-      total_count: response.data.total_count <= 1000 ? response.data.total_count : 1000,
-      items: response.data.items,
-      isLoading: true,
-      nickname: values,
-      totalPages: Math.ceil(total_count / per_page)
-    });
 
-    return response.data;
+    try {
+      const { data } = await axios.get<UsersSearchResponse>(`${BASE_URL}/search/users`, {
+        params: { q: query, page, per_page, sort: 'repositories' }
+      });
+      const { total_count } = get();
+      
+      set({
+        isData: true,
+        total_count: data.total_count <= 1000 ? data.total_count : 1000,
+        items: data.items,
+        isLoading: true,
+        nickname: values,
+        totalPages: Math.ceil(total_count / per_page),
+        error: null,
+      });
+  
+      return data;
+    } catch (error) {
+      if (error instanceof AxiosError) {
+        set({ error: error.code });
+      }
+    }
   },
 
   setSwitchForward: (numberPage) => {
@@ -65,7 +74,11 @@ const usersSliceResponse: StateCreator<UsersSearchResponse & UsersActionData> = 
       isLoading: false,
       per_page: 10,
       page: 1,
-      nickname: { nickname: '' }
+      nickname: { nickname: '' },
+      totalPages: 0,
+      currentPage: 1,
+      currentPerPage: 10,
+      error: null,
     });
   },
 });

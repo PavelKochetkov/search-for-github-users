@@ -2,6 +2,7 @@ import { ReactElement, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useUsersDataStore } from "../store/usersStore";
 import { Link, useParams } from "react-router-dom";
+import BackToResultSearch from "./BackToResultSearch";
 
 const ProfileCard = () : ReactElement => {
   const { t } = useTranslation();
@@ -43,7 +44,7 @@ const ProfileCard = () : ReactElement => {
         <p className="text-gray-600">{t('profilePage.numberOfSubscribers')}: {followers}</p>
         <p className="text-gray-600">{t('profilePage.numberOfSubscriptions')}: {following}</p>
       </div>
-      <div className="p-4">
+      <div className="p-4 flex flex-col gap-2">
         <Link
           className="px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 transition duration-200"
           to={html_url!}
@@ -52,6 +53,7 @@ const ProfileCard = () : ReactElement => {
         >
           {t('profilePage.viewProfile')}
         </Link>
+        <BackToResultSearch />
       </div>
     </>
   );

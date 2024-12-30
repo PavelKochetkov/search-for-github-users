@@ -61,9 +61,9 @@ const Pagination = (): ReactElement => {
               {t('pagination.prev')}
             </button>
             <button
-              className={cn("flex items-center justify-center px-3 h-8 text-sm font-medium text-white bg-gray-800 rounded-s hover:bg-gray-900", { "opacity-50": currentPerPage === totalPages })}
+              className={cn("flex items-center justify-center px-3 h-8 text-sm font-medium text-white bg-gray-800 rounded-s hover:bg-gray-900", { "opacity-50": currentPerPage === totalPages || totalPages === 1 })}
               onClick={handleClickForward}
-              disabled={currentPerPage === totalPages}
+              disabled={currentPerPage === totalPages || totalPages === 1}
             >
               {t('pagination.next')}
               <svg className="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
