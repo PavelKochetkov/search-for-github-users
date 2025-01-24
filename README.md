@@ -43,6 +43,7 @@ make start
 
 - TypeScript
 - React
+- Zustand
 - Tailwind CSS
 - GitHub API
 - Vite
